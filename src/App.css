@@ -71,7 +71,7 @@ body {
 }
 .todo-form button {
   padding: 8px 12px;
-  background: var(--brand);
+  background: navy;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -87,9 +87,9 @@ body {
   background: #fff;
 }
 .filters button.selected {
-  background: var(--brand);
+  background: navy;
   color: #fff;
-  border-color: var(--brand);
+  border-color: navy;
 }
 .todo-list {
   list-style: none;
