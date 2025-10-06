@@ -30,7 +30,7 @@ body {
 }
 .brand {
   font-weight: 700;
-  color: var(--brand);
+  color: navy;
 }
 .nav-links a {
   margin-left: 12px;
