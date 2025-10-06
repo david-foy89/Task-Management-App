@@ -2,7 +2,7 @@
 :root {
   --brand: #0366d6;
   --muted: #666;
-  --bg: #f5f7fb;
+  --bg: silver;
 }
 * {
   box-sizing: border-box;
