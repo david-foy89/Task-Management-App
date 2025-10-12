@@ -1,4 +1,4 @@
-# Task Management App (Create React App)
+# Task Management App
 
 Author: David Foy
 
