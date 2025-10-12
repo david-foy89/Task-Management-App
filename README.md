@@ -1,6 +1,6 @@
 # Task Management App (Create React App)
 
-Author: Your Name Here
+Author: David Foy
 
 Overview
 
