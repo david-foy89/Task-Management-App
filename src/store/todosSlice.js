@@ -29,8 +29,13 @@ const slice = createSlice({
       state.items = state.items.filter(i => !i.completed)
       localStorage.setItem(LS_KEY, JSON.stringify(state.items))
     }
+    ,
+    setTodos: (state, action) => {
+      // Expect an array of {id, text, completed}
+      state.items = Array.isArray(action.payload) ? action.payload : []
+      localStorage.setItem(LS_KEY, JSON.stringify(state.items))
+    }
   }
 })
-
-export const { addTodo, toggleTodo, editTodo, deleteTodo, clearCompleted } = slice.actions
+export const { addTodo, toggleTodo, editTodo, deleteTodo, clearCompleted, setTodos } = slice.actions
 export default slice.reducer
