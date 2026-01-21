@@ -1,12 +1,312 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task Management App</title>
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+          sans-serif;
+        line-height: 1.6;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        color: #24292f;
+      }
+
+      .header {
+        border-bottom: 1px solid #d1d9e0;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        color: #24292f;
+        border-bottom: 1px solid #d1d9e0;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #24292f;
+        margin-top: 30px;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        color: #24292f;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+
+      .author {
+        color: #656d76;
+        font-style: italic;
+        margin-bottom: 20px;
+      }
+
+      .overview {
+        background-color: #f6f8fa;
+        padding: 20px;
+        border-left: 4px solid #0969da;
+        margin-bottom: 30px;
+        border-radius: 6px;
+      }
+
+      pre {
+        background-color: #f6f8fa;
+        border: 1px solid #d1d9e0;
+        border-radius: 6px;
+        padding: 16px;
+        overflow: auto;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      code {
+        background-color: #f6f8fa;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-size: 85%;
+      }
+
+      .tech-list {
+        background-color: #f6f8fa;
+        padding: 15px;
+        border-radius: 6px;
+        margin: 15px 0;
+      }
+
+      .features-list {
+        background-color: #f0f9ff;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #0969da;
+        margin: 15px 0;
+      }
+
+      .user-stories {
+        background-color: #f0f9ff;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #22c55e;
+        margin: 15px 0;
+      }
+
+      .wireframes {
+        background-color: #fefce8;
+        padding: 20px;
+        border-radius: 6px;
+        border-left: 4px solid #eab308;
+        margin: 20px 0;
+        font-family: "Courier New", monospace;
+        white-space: pre-line;
+      }
+
+      .state-tree {
+        background-color: #f3e8ff;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #8b5cf6;
+        font-family: "Courier New", monospace;
+        white-space: pre-line;
+      }
+
+      .components-list {
+        background-color: #ecfdf5;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #10b981;
+        margin: 15px 0;
+      }
+
+      .improvements {
+        background-color: #fff7ed;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #f97316;
+        margin: 15px 0;
+      }
+
+      .notes {
+        background-color: #fef2f2;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #ef4444;
+        margin: 15px 0;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      .demo-link {
+        display: inline-block;
+        background-color: #0969da;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 6px;
+        margin: 10px 0;
+        font-weight: 500;
+      }
+
+      .demo-link:hover {
+        background-color: #0860ca;
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #d1d9e0;
+        text-align: center;
+        color: #656d76;
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div class="header">
+      <h1>Task Management App</h1>
+      <div class="author">Author: David Foy</div>
+    </div>
+
+    <div class="overview">
+      <h2>Overview</h2>
+      <p>
+        This is a small task (to-do) management web app built as a Create React
+        App project. It supports full CRUD for tasks, localStorage persistence,
+        filters (All / Active / Completed), task editing, and a contact form
+        rendered as a controlled component.
+      </p>
+    </div>
+
+    <h2>How to Run (Windows PowerShell)</h2>
+    <pre><code>cd "c:\Users\Thebe\OneDrive\Desktop\gitrepo\QuickStart\Task-Management-App"
+npm install
+npm start</code></pre>
+    <p>Then open <code>http://localhost:3000</code></p>
+
+    <h2>Technologies Used</h2>
+    <div class="tech-list">
+      <ul>
+        <li>React (Create React App)</li>
+        <li>Redux Toolkit for state management</li>
+        <li>React Router for navigation</li>
+        <li>CSS for styling</li>
+        <li>localStorage for persistence</li>
+      </ul>
+    </div>
+
+    <h2>Features / What it does</h2>
+    <div class="features-list">
+      <ul>
+        <li>Add new todos</li>
+        <li>Edit todos</li>
+        <li>Mark todos complete/incomplete</li>
+        <li>Delete todos</li>
+        <li>Filter todos (All / Active / Completed)</li>
+        <li>
+          Contact form with first name, last name, email and comments
+          (controlled component)
+        </li>
+        <li>Simple stats sidebar</li>
+      </ul>
+    </div>
+
+    <h2>User Stories</h2>
+    <div class="user-stories">
+      <ol>
+        <li>
+          As a busy person I want to add tasks quickly so I can remember what to
+          do later.
+        </li>
+        <li>
+          As a user I want to mark tasks complete so I can track progress and
+          hide finished work.
+        </li>
+        <li>
+          As a customer I want to contact the site owner with questions by
+          filling a contact form.
+        </li>
+      </ol>
+    </div>
+
+    <h2>Wireframes (Text Sketches)</h2>
+
+    <h3>1. Todos view ("/todos")</h3>
+    <div class="wireframes">
+      --- | Top nav: [Task Manager] | Todos | Contact | | Left column (main) |
+      Right column | | - Add form (input + Add btn) | - Stats | | - Filters:
+      All/Active/Done | - Quick actions | | - Todo list (items) | | ---
+    </div>
+
+    <h3>2. Contact view ("/contact")</h3>
+    <div class="wireframes">
+      --- | Top nav: [Task Manager] | Todos | Contact | | Contact form: | |
+      [First name] [Last] | | [Email] | | [Comments textarea] | | [Send button]
+      | ---
+    </div>
+
+    <h2>State Tree</h2>
+    <div class="state-tree">
+      { todos: { items: [ { id, text, completed } ] } // Contact form is local
+      component state inside ContactPage }
+    </div>
+
+    <h2>Components (Container / Presentational)</h2>
+    <div class="components-list">
+      <ul>
+        <li><strong>App</strong> (container) - top-level routes and nav</li>
+        <li>
+          <strong>TodosPage</strong> (container) - connects to Redux for todos,
+          holds filter state
+        </li>
+        <li>
+          <strong>TodoForm</strong> (presentational with local state) - new-todo
+          input and submit
+        </li>
+        <li>
+          <strong>TodoList</strong> (presentational) - renders list based on
+          filter
+        </li>
+        <li>
+          <strong>TodoItem</strong> (presentational) - single item,
+          edit/delete/toggle
+        </li>
+        <li>
+          <strong>ContactPage</strong> (presentational but manages local form
+          state) - controlled form
+        </li>
+      </ul>
+    </div>
+
+    <h2>Ideas for Future Improvements</h2>
+    <div class="improvements">
+      <ol>
+        <li>Add user authentication and per-user todo lists</li>
+        <li>Synchronize with a backend API so multiple devices stay in sync</li>
+        <li>Add due dates, reminders and categorization/tags</li>
+        <li>Improve accessibility and keyboard shortcuts</li>
+      </ol>
+    </div>
+
+    <h2>Notes</h2>
+    <div class="notes">
+      <p>
+        This repo is intended as a small demo for a course assignment. The app
+        persists todos to localStorage so they remain between reloads.
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>Task Management App - Built with React and Redux Toolkit</p>
+    </div>
   </body>
 </html>
